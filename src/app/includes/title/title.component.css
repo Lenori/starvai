@@ -1,0 +1,37 @@
+.title {
+
+  background-color: #2E2E2E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 70px 0;
+
+}
+
+.title h1 {
+
+  text-align: center;
+  color: white;
+  font-weight: 100;
+  margin: 0;
+  font-size: 40px;
+
+}
+
+.title h1 > span {
+
+  font-weight: 600;
+
+}
+
+.title p {
+
+  color: white;
+  font-weight: 100;
+  font-size: 16px;
+  text-align: center;
+  width: 480px;
+  margin: 50px auto 0;
+  line-height: 31px;
+
+}

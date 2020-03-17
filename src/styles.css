@@ -1,1 +1,55 @@
-/* You can add global styles to this file, and also import other style files */
+.fas {
+
+  line-height: inherit !important;
+
+}
+
+a, a:visited, a:hover {
+
+  color: inherit;
+  font-size: inherit;
+  text-decoration: none;
+
+}
+
+body {
+
+  font-family: 'Open Sans', sans-serif !important;
+  margin: 0;
+  background-color: #F5F5F5;
+  color: #2E2E2E;
+
+}
+
+div {
+
+  overflow: hidden;
+
+}
+
+button {
+
+  color: #2e2e2e;
+  border: none;
+  background-color: #a7ce41;
+  padding: 15px 90px;
+  margin: 40px 20px;
+  font-weight: 600;
+  font-size: 16px;
+
+}
+
+.content {
+
+  width: 1400px;
+  margin: auto;
+
+}
+
+.title-divisor {
+
+  border-bottom: 1px solid #A7CE41;
+  width: 200px;
+  margin: 10px auto 0;
+
+}

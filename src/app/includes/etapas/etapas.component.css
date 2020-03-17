@@ -1,0 +1,59 @@
+.etapas {
+
+  background-color: #2E2E2E;
+  padding: 70px 0;
+
+}
+
+.etapas h2 {
+
+  color: white;
+  font-weight: 100;
+  font-size: 35px;
+  margin: 0 auto;
+  text-align: center;
+
+}
+
+.etapas-items {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 70px 0 0;
+
+}
+
+.etapas-item {
+
+  width: 15%;
+  text-align: center;
+
+}
+
+.etapas-item i {
+
+  color: #A7CE41;
+  font-size: 45px;
+
+}
+
+.etapas-item p {
+
+  color: white;
+  font-weight: 100;
+  font-size: 14px;
+
+}
+
+.etapas-div {
+
+  width: 7%;
+
+}
+
+.etapas-div div {
+
+  border-top: 2px solid #a7ce41;
+
+}
