@@ -12,10 +12,24 @@ import { EtapasComponent } from './includes/etapas/etapas.component';
 import { OpcoesComponent } from './includes/opcoes/opcoes.component';
 import { FaqComponent } from './includes/faq/faq.component';
 import { FormContatoComponent } from './includes/form-contato/form-contato.component';
+import { TrabalhosComponent } from './views/trabalhos/trabalhos.component';
+import { BlogComponent } from './views/blog/blog.component';
+import { BlogRecentesComponent } from './includes/blog-recentes/blog-recentes.component';
+import { BlogCategoriasComponent } from './includes/blog-categorias/blog-categorias.component';
+import { HomeComponent } from './views/home/home.component';
+import { DepoimentosComponent } from './includes/depoimentos/depoimentos.component';
+import { ConhecaProjetosComponent } from './includes/conheca-projetos/conheca-projetos.component';
+import { HomeBannerComponent } from './includes/home-banner/home-banner.component';
+import { HomeProjetosComponent } from './includes/home-projetos/home-projetos.component';
+import { ContatoComponent } from './views/contato/contato.component';
 
 const appRoutes = [
 
-  { path: 'projetos', component: ProjetosComponent}
+  { path: '', component: HomeComponent},
+  { path: 'projetos', component: ProjetosComponent},
+  { path: 'trabalhos', component: TrabalhosComponent},
+  { path: 'blog', component: BlogComponent},
+  { path: 'contato', component: ContatoComponent}
 
 ];
 
@@ -29,7 +43,17 @@ const appRoutes = [
     EtapasComponent,
     OpcoesComponent,
     FaqComponent,
-    FormContatoComponent
+    FormContatoComponent,
+    TrabalhosComponent,
+    BlogComponent,
+    BlogRecentesComponent,
+    BlogCategoriasComponent,
+    HomeComponent,
+    DepoimentosComponent,
+    ConhecaProjetosComponent,
+    HomeBannerComponent,
+    HomeProjetosComponent,
+    ContatoComponent
   ],
   imports: [
     RouterModule.forRoot(

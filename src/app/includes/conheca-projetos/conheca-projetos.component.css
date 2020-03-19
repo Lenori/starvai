@@ -1,0 +1,24 @@
+.banner {
+
+  text-align: center;
+  padding: 100px 0;
+  background-size: cover;
+
+}
+
+.banner h2 {
+
+  width: 45%;
+  margin: 0 auto;
+  color: white;
+  font-size: 43px;
+
+}
+
+@media screen and (max-width: 800px) {
+
+  .banner h2 {
+    width: 90%;
+  }
+
+}

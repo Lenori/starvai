@@ -1,0 +1,28 @@
+.categorias {
+
+  padding: 40px 0;
+
+}
+
+.categorias h2 {
+
+  font-size: 20px;
+  text-align: center;
+
+}
+
+.categorias ul {
+
+  text-align: center;
+  font-weight: 100;
+  list-style-type: none;
+  padding: 0;
+
+}
+
+.categorias li {
+
+  font-size: 18px;
+  margin: 0 0 25px;
+
+}

@@ -1,0 +1,49 @@
+.home-text {
+
+  background-color: #2e2e2e;
+  padding: 60px 0;
+  text-align: center;
+
+}
+
+.home-text-items {
+
+  display: flex;
+  justify-content: space-between;
+  color: white;
+
+}
+
+.home-text-item {
+
+  width: 25%;
+
+}
+
+.home-text-item h2 {
+
+  font-weight: 600;
+  font-size: 20px;
+
+}
+
+.home-text-item p {
+
+  font-weight: 100;
+  font-size: 15px;
+  line-height: 28px;
+
+}
+
+@media screen and (max-width: 1120px) {
+
+  .home-text-items {
+    flex-direction: column;
+  }
+
+  .home-text-item {
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+
+}

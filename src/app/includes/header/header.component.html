@@ -34,7 +34,7 @@
 
     <div class="menu">
 
-      <img src="../../../assets/logo.png" alt="starvai-logo" />
+      <a routerLink=""><img src="../../../assets/logo.png" alt="starvai-logo" /></a>
 
       <i id="openMenu" (click)="menuControl('on')" class="fas fa-bars"></i>
 
@@ -44,9 +44,9 @@
 
         <li>EMPRESA</li>
         <li>NOSSOS SERVIÇOS</li>
-        <li>PROJETOS EXECUTADOS</li>
-        <li>BLOG</li>
-        <li>CONTATO</li>
+        <a routerLink="/trabalhos"><li>PROJETOS EXECUTADOS</li></a>
+        <a routerLink="/blog"><li>BLOG</li></a>
+        <a routerLink="/contato"><li>CONTATO</li></a>
 
       </ul>
 
