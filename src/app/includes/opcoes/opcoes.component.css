@@ -1,7 +1,7 @@
 .opcoes {
 
   background-color: #2E2E2E;
-  padding: 70px 0 0;
+  padding: 70px 0;
   text-align: center;
 
 }
@@ -21,7 +21,7 @@
   width: 1000px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   margin: 50px auto;
 
@@ -54,5 +54,38 @@
   font-weight: 100;
   font-size: 18px;
   text-align: left;
+
+}
+
+@media screen and (max-width: 1350px) {
+
+  .opcoes-items {
+    width: 100%;
+  }
+
+  .opcoes-item {
+    width: 35%;
+  }
+
+}
+
+@media screen and (max-width: 1200px) {
+
+  .opcoes-items {
+    flex-direction: column;
+  }
+
+  .opcoes-item {
+    width: 50%;
+  }
+
+}
+
+@media screen and (max-width: 900px) {
+
+  .opcoes-item {
+    justify-content: flex-start;
+    width: auto;
+  }
 
 }

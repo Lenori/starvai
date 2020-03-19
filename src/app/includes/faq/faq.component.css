@@ -1,0 +1,54 @@
+.faq {
+
+  padding: 45px 0;
+
+}
+
+.faq h2 {
+
+  font-weight: 100;
+  font-size: 35px;
+  margin: 0 auto;
+  text-align: center;
+
+
+}
+
+.faq-item {
+
+  display: flex;
+  justify-content: flex-start;
+  background-color: #E5E5E5;
+  padding: 25px;
+  margin: 22px 0;
+
+}
+
+.faq-item i {
+
+  font-size: 23px;
+
+}
+
+.faq-text {
+
+  padding: 0 20px;
+
+}
+
+.faq-text h3 {
+
+  margin: 0;
+  font-weight: 100;
+
+}
+
+.faq-text p {
+
+  font-weight: 100;
+  margin: 20px 0 0;
+  border-top: 1px solid #2e2e2e57;
+  padding-top: 20px;
+  line-height: 25px;
+
+}

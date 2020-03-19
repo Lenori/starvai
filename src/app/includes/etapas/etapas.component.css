@@ -57,3 +57,31 @@
   border-top: 2px solid #a7ce41;
 
 }
+
+@media screen and (max-width: 1200px) {
+
+  .etapas-item {
+    width: 20%;
+  }
+
+  .etapas-div {
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 1000px) {
+
+  .etapas {
+    padding: 70px 0 0;
+  }
+
+  .etapas-items {
+    flex-direction: column;
+  }
+
+  .etapas-item {
+    margin-bottom: 50px;
+  }
+
+}

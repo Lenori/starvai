@@ -10,6 +10,8 @@ import { HeaderComponent } from './includes/header/header.component';
 import { FooterComponent } from './includes/footer/footer.component';
 import { EtapasComponent } from './includes/etapas/etapas.component';
 import { OpcoesComponent } from './includes/opcoes/opcoes.component';
+import { FaqComponent } from './includes/faq/faq.component';
+import { FormContatoComponent } from './includes/form-contato/form-contato.component';
 
 const appRoutes = [
 
@@ -25,7 +27,9 @@ const appRoutes = [
     HeaderComponent,
     FooterComponent,
     EtapasComponent,
-    OpcoesComponent
+    OpcoesComponent,
+    FaqComponent,
+    FormContatoComponent
   ],
   imports: [
     RouterModule.forRoot(

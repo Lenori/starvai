@@ -57,3 +57,23 @@
   width: 100%;
 
 }
+
+@media screen and (max-width: 1300px) {
+
+  .projeto-desc {
+    width: 90%;
+  }
+
+}
+
+@media screen and (max-width: 1080px) {
+
+  .projeto-desc {
+    flex-direction: column;
+  }
+
+  .projeto-desc-texto, .projeto-desc-text-reverse {
+    text-align: center !important;
+  }
+
+}
