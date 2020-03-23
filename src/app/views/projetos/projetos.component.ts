@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {ProjetosService} from '../../services/projetos/projetos.service';
 
 @Component({
   selector: 'app-projetos',
@@ -7,13 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjetosComponent implements OnInit {
 
-  titulo = 'Projeto';
-  subtitulo = 'Safehouse';
-  texto = 'O projeto Safehouse contém soluções que automatizam a segurança da sua casa para que você e sua família possam dormir mais tranquilamente, sabendo que sua casa está sendo vigiada mesmo que você esteja do outro lado do mundo!';
+  id: any;
+  projeto: any;
+  texto: any;
+  subtitulo: any;
 
-  constructor() { }
+  titulo = 'Projeto';
+
+  constructor(
+    private route: ActivatedRoute,
+    private projetosService: ProjetosService
+  ) { }
 
   ngOnInit() {
+
+    this.id = this.route.snapshot.params.id;
+
+    this.projetosService.one(this.id).then(
+      data => {
+        this.projeto = data[0];
+        this.texto = this.projeto.resume;
+        this.subtitulo = this.projeto.title;
+      }
+    );
+
   }
 
 }

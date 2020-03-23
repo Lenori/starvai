@@ -1,7 +1,7 @@
 <app-title [titulo]="titulo"></app-title>
 
-<app-blog-recentes [categoria]="listas[0]"></app-blog-recentes>
-<app-blog-recentes [categoria]="listas[1]"></app-blog-recentes>
-<app-blog-recentes [categoria]="listas[2]"></app-blog-recentes>
+<app-blog-recentes [categoria]="categorias[0].name"></app-blog-recentes>
+<app-blog-recentes [categoria]="categorias[1].name"></app-blog-recentes>
+<app-blog-recentes [categoria]="categorias[2].name"></app-blog-recentes>
 
-<app-blog-categorias></app-blog-categorias>
+<app-blog-categorias [categorias]="categorias"></app-blog-categorias>

@@ -4,37 +4,39 @@
 
     <ul>
 
-      <li class="active">PROJETO SAFEHOUSE</li>
-      <li>PROJETO CLEVERHOME</li>
-      <li>PROJETO FUNFLAT</li>
+      <li *ngFor="let projeto of projetos" (click)="seletor = projeto.id; slug = projeto.slug" [ngClass]="{'active': seletor == projeto.id}">Projeto {{projeto.title}}</li>
 
     </ul>
 
-    <div class="home-projetos-item">
+    <ng-container *ngFor="let projeto of projetos">
 
-      <img src="../../../assets/home-project.jpg" alt="home-project" />
+      <div *ngIf="seletor == projeto.id" class="home-projetos-item">
 
-      <div class="home-projetos-item-text">
+        <img src="../../../assets/home-project.jpg" alt="home-project" />
 
-        <p>O Projeto Safehouse contém soluções que automatizam a segurança da sua casa para que você e sua família possam dormir mais tranquilamente, sabendo que sua casa está sendo vigiada mesmo que você esteja do outro lado do mundo!</p>
+        <div class="home-projetos-item-text">
 
-        <ul>
+          <p>{{projeto.resume}}</p>
 
-          <li>Fechaduras eletrônicas</li>
-          <li>Fechaduras eletrônicas</li>
-          <li>Fechaduras eletrônicas</li>
-          <li>Fechaduras eletrônicas</li>
-          <li>Fechaduras eletrônicas</li>
+          <ul>
 
-        </ul>
+            <li>Fechaduras eletrônicas</li>
+            <li>Fechaduras eletrônicas</li>
+            <li>Fechaduras eletrônicas</li>
+            <li>Fechaduras eletrônicas</li>
+            <li>Fechaduras eletrônicas</li>
 
-        <span>...E muito mais!</span>
+          </ul>
+
+          <span>...E muito mais!</span>
+
+        </div>
 
       </div>
 
-    </div>
+    </ng-container>
 
-    <a routerLink="/projetos"><button>SAIBA MAIS</button></a>
+    <a routerLink="/projetos/{{slug}}/{{seletor}}"><button>SAIBA MAIS</button></a>
     <a routerLink="/contato"><button>FAZER ORÇAMENTO</button></a>
 
   </div>

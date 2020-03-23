@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CategoriasService} from '../../services/categorias/categorias.service';
 
 @Component({
   selector: 'app-blog',
@@ -7,13 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogComponent implements OnInit {
 
+  categorias: any;
+
   titulo = 'Blog';
 
-  listas = ['Áudio', 'Vídeo', 'Dicas e Truques'];
-
-  constructor() { }
+  constructor(
+    private categoriaService: CategoriasService
+  ) { }
 
   ngOnInit() {
+
+    this.categoriaService.all().then(
+      data => {
+        this.categorias = data;
+      }
+    );
+
   }
 
 }

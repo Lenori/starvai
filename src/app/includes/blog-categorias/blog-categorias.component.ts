@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-blog-categorias',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./blog-categorias.component.css']
 })
 export class BlogCategoriasComponent implements OnInit {
+
+  @Input()
+  categorias: any;
 
   constructor() { }
 

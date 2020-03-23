@@ -18,6 +18,7 @@
 
 .home-projetos li {
 
+  text-transform: uppercase;
   font-weight: 100;
 
 }

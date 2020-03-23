@@ -22,11 +22,12 @@ import { ConhecaProjetosComponent } from './includes/conheca-projetos/conheca-pr
 import { HomeBannerComponent } from './includes/home-banner/home-banner.component';
 import { HomeProjetosComponent } from './includes/home-projetos/home-projetos.component';
 import { ContatoComponent } from './views/contato/contato.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes = [
 
   { path: '', component: HomeComponent},
-  { path: 'projetos', component: ProjetosComponent},
+  { path: 'projetos/:slug/:id', component: ProjetosComponent},
   { path: 'trabalhos', component: TrabalhosComponent},
   { path: 'blog', component: BlogComponent},
   { path: 'contato', component: ContatoComponent}
@@ -56,6 +57,7 @@ const appRoutes = [
     ContatoComponent
   ],
   imports: [
+    HttpClientModule,
     RouterModule.forRoot(
       appRoutes,
       {enableTracing: false} // <-- debugging purposes only
