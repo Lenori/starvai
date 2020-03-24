@@ -11,6 +11,7 @@ export class ProjetosComponent implements OnInit {
 
   id: any;
   projeto: any;
+  opcoes: any;
   texto: any;
   subtitulo: any;
 
@@ -27,7 +28,9 @@ export class ProjetosComponent implements OnInit {
 
     this.projetosService.one(this.id).then(
       data => {
-        this.projeto = data[0];
+        this.projeto = data[0][0];
+        this.opcoes = data[1];
+        console.log(this.opcoes);
         this.texto = this.projeto.resume;
         this.subtitulo = this.projeto.title;
       }

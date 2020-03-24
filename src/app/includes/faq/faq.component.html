@@ -4,29 +4,15 @@
 
     <h2>PERGUNTAS FREQUENTES</h2>
 
-    <div (click)="openFaq = 1" class="faq-item">
+    <div *ngFor="let faq of faqs" (click)="openFaq = faq.id" class="faq-item">
 
-      <i *ngIf="openFaq != 1" class="fas fa-chevron-right"></i>
-      <i *ngIf="openFaq == 1" class="fas fa-chevron-down"></i>
+      <i *ngIf="openFaq != faq.id" class="fas fa-chevron-right"></i>
+      <i *ngIf="openFaq == faq.id" class="fas fa-chevron-down"></i>
       <div class="faq-text">
 
-        <h3>Minha casa está pronta para este projeto?</h3>
+        <h3>{{faq.title}}</h3>
 
-        <p *ngIf="openFaq == 1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at cursus nisl. Etiam in turpis augue. Pellentesque sodales diam et odio scelerisque bibendum. Etiam finibus aliquet ipsum pharetra blandit. Vestibulum libero mi, laoreet sit amet turpis id, volutpat egestas nisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus ac dolor arcu. Maecenas ligula est, efficitur a orci a, vehicula consequat odio.</p>
-
-      </div>
-
-    </div>
-
-    <div (click)="openFaq = 2" class="faq-item">
-
-      <i *ngIf="openFaq != 2" class="fas fa-chevron-right"></i>
-      <i *ngIf="openFaq == 2" class="fas fa-chevron-down"></i>
-      <div class="faq-text">
-
-        <h3>Minha casa está pronta para este projeto?</h3>
-
-        <p *ngIf="openFaq == 2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at cursus nisl. Etiam in turpis augue. Pellentesque sodales diam et odio scelerisque bibendum. Etiam finibus aliquet ipsum pharetra blandit. Vestibulum libero mi, laoreet sit amet turpis id, volutpat egestas nisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus ac dolor arcu. Maecenas ligula est, efficitur a orci a, vehicula consequat odio.</p>
+        <p *ngIf="openFaq == faq.id">{{faq.reply}}</p>
 
       </div>
 

@@ -7,45 +7,10 @@
 
     <div class="opcoes-items">
 
-      <div class="opcoes-item">
+      <div *ngFor="let opcao of opcoes" class="opcoes-item">
 
         <i class="fas fa-check"></i>
-        <p>LOREM IPSUM DOLOR SIT AMET</p>
-
-      </div>
-
-      <div class="opcoes-item">
-
-        <i class="fas fa-check"></i>
-        <p>LOREM IPSUM DOLOR SIT AMET</p>
-
-      </div>
-
-      <div class="opcoes-item">
-
-        <i class="fas fa-check"></i>
-        <p>LOREM IPSUM DOLOR SIT AMET</p>
-
-      </div>
-
-      <div class="opcoes-item">
-
-        <i class="fas fa-check"></i>
-        <p>LOREM IPSUM DOLOR SIT AMET</p>
-
-      </div>
-
-      <div class="opcoes-item">
-
-        <i class="fas fa-check"></i>
-        <p>LOREM IPSUM DOLOR SIT AMET</p>
-
-      </div>
-
-      <div class="opcoes-item">
-
-        <i class="fas fa-check"></i>
-        <p>LOREM IPSUM DOLOR SIT AMET</p>
+        <p>{{opcao.title}}</p>
 
       </div>
 
@@ -53,7 +18,7 @@
 
     <h2>E MUITO MAIS!</h2>
 
-    <button>FAZER ORÇAMENTO</button>
+    <a routerLink="/contato"><button>FAZER ORÇAMENTO</button></a>
 
   </div>
 

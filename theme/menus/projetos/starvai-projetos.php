@@ -2,6 +2,8 @@
 
 global $wpdb;
 
+$id = $_GET['id'];
+
 if (isset($_POST['action'])) {
 
     if ($_POST['action'] == 'editarProjeto') {
@@ -26,6 +28,25 @@ if (isset($_POST['action'])) {
 
         );
 
+        $wpdb->delete('wp_opcoes_selecionadas', array ('projeto' => $_GET['id']));
+
+        foreach ($_POST['opcoes'] as $check) {
+
+            $wpdb->insert(
+
+                'wp_opcoes_selecionadas',
+
+                array(
+
+                    'projeto' => $_GET['id'],
+                    'opcao' => $check
+
+                )
+
+            );
+
+        }
+
         echo "<div id=\"setting-error-settings_updated\" class=\"updated settings-error notice is-dismissible\">
     
                   <p><strong>Projeto editado.</strong></p>
@@ -41,6 +62,13 @@ if (isset($_POST['action'])) {
 }
 
 $projetos = $wpdb->get_results('SELECT * FROM  wp_projetos');
+$opcoes = $wpdb->get_results('SELECT * FROM  wp_projetos_opcoes');
+$selecionadosDB = $wpdb->get_results("SELECT opcao FROM  wp_opcoes_selecionadas WHERE projeto = '$id'");
+
+$selecionados = [];
+
+foreach ($selecionadosDB as $selected)
+    $selecionados[] = $selected->opcao;
 
 ?>
 
@@ -50,7 +78,6 @@ $projetos = $wpdb->get_results('SELECT * FROM  wp_projetos');
 
         <form method="post">
 
-            <input type="hidden" name="action" value="editarProjeto">
             <input type="hidden" name="action" value="editarProjeto">
 
             <table class="form-table">
@@ -76,6 +103,24 @@ $projetos = $wpdb->get_results('SELECT * FROM  wp_projetos');
                             <td><textarea style="height: 300px;" required name="resume" id="resume" class="regular-text"><?php echo $data->resume; ?></textarea>
                             <p class="description">Em poucas palavras, explique um pouco sobre este projeto.</p></td>
                         </tr>
+
+                        <tr>
+                            <th><h2>O seu projeto pode conter:</h2></th>
+                        </tr>
+
+                        <?php foreach ($opcoes as $opcao) : ?>
+
+                            <tr>
+                                <td style="width: 300px;">
+                                    <label for="opcao-<? echo $opcao->id ?>">
+                                    <input name="opcoes[]" type="checkbox" id="opcao-<? echo $opcao->id ?>" value="<?php echo $opcao->id ?>" <?php echo in_array($opcao->id, $selecionados) ? 'checked' : '' ?>>
+                                        <?php echo $opcao->title ?>
+                                    </label>
+                                    <br>
+                                </td>
+                            </tr>
+
+                        <?php endforeach; ?>
 
                     <?php endif; ?>
 
