@@ -19,13 +19,7 @@
           <p>{{projeto.resume}}</p>
 
           <ul>
-
-            <li>Fechaduras eletrônicas</li>
-            <li>Fechaduras eletrônicas</li>
-            <li>Fechaduras eletrônicas</li>
-            <li>Fechaduras eletrônicas</li>
-            <li>Fechaduras eletrônicas</li>
-
+            <li *ngFor="let opcoes of projeto.opcoes">{{opcoes.title}}</li>
           </ul>
 
           <span>...E muito mais!</span>

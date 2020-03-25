@@ -66,6 +66,27 @@ function starvai_faq() {
 
 add_action('admin_menu', 'faq_starvai_menu');
 
+function depoimento_starvai_menu() {
+
+    add_menu_page(
+        'Starvai Depoimentos',
+        'Starvai Depoimentos',
+        'manage_options',
+        'starvai_depoimentos',
+        'starvai_depoimentos',
+        'dashicons-admin-settings',
+        6);
+
+}
+
+function starvai_depoimentos() {
+
+    include('menus/depoimentos/starvai-depoimentos.php');
+
+}
+
+add_action('admin_menu', 'depoimento_starvai_menu');
+
 /**
  * STARVAI API
  * Endpoints customizados para a API
@@ -75,8 +96,26 @@ function starvai_projetos_all() {
 
     global $wpdb;
 
+    $response = [];
+
     $projetos = $wpdb->get_results('SELECT * FROM  wp_projetos');
-    return $projetos;
+
+    foreach ($projetos as $proj) {
+
+        $projeto = new stdClass();
+
+        $projeto->id = $proj->id;
+        $projeto->title = $proj->title;
+        $projeto->slug = $proj->slug;
+        $projeto->resume = $proj->resume;
+
+        $projeto->opcoes = $wpdb->get_results("SELECT a.title, b.opcao FROM wp_projetos_opcoes AS a INNER JOIN wp_opcoes_selecionadas AS b ON a.id = b.opcao WHERE b.projeto = '$proj->id'");
+
+        $response[] = $projeto;
+
+    }
+
+    return $response;
 
 }
 
@@ -123,3 +162,21 @@ add_action('rest_api_init', function () {
         'callback' => 'starvai_faq_all',
     ) );
 });
+
+function starvai_depoimentos_all() {
+
+    global $wpdb;
+
+    $faq = $wpdb->get_results("SELECT * FROM  wp_depoimentos");
+    return $faq;
+
+}
+
+add_action('rest_api_init', function () {
+    register_rest_route( 'wp/v2', '/depoimentos', array(
+        'methods' => 'GET',
+        'callback' => 'starvai_depoimentos_all',
+    ) );
+});
+
+add_theme_support( 'post-thumbnails' );

@@ -10,9 +10,11 @@ export class BlogRecentesComponent implements OnInit {
   @Input()
   categoria: any;
 
+  @Input()
+  posts: any;
+
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

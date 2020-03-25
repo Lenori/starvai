@@ -2,11 +2,19 @@
 
   <div class="content">
 
-    <p>“Projetaram, venderam e instalaram o meu Home Theater 7.1, multiroom e sistema de automação tendo sido acompanhado com muita exclusividade.”</p>
+    <ng-container *ngFor="let depoimento of depoimentos">
 
-    <div class="title-divisor"></div>
+      <div *ngIf="depoimento.id == ativo" class="depoimento-item">
 
-    <h2>Oswaldo F.</h2>
+        <p>“{{depoimento.texto}}”</p>
+
+        <div class="title-divisor"></div>
+
+        <h2>{{depoimento.nome}}</h2>
+
+      </div>
+
+    </ng-container>
 
   </div>
 

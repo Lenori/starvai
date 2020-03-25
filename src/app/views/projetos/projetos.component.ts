@@ -30,7 +30,6 @@ export class ProjetosComponent implements OnInit {
       data => {
         this.projeto = data[0][0];
         this.opcoes = data[1];
-        console.log(this.opcoes);
         this.texto = this.projeto.resume;
         this.subtitulo = this.projeto.title;
       }
