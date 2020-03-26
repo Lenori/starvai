@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {RouterModule} from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 
@@ -23,6 +24,10 @@ import { HomeBannerComponent } from './includes/home-banner/home-banner.componen
 import { HomeProjetosComponent } from './includes/home-projetos/home-projetos.component';
 import { ContatoComponent } from './views/contato/contato.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BlogSingleComponent } from './includes/blog-single/blog-single.component';
+import { CategoriaComponent } from './views/categoria/categoria.component';
+import { BlogListaComponent } from './includes/blog-lista/blog-lista.component';
+import { PageComponent } from './views/page/page.component';
 
 const appRoutes = [
 
@@ -30,7 +35,10 @@ const appRoutes = [
   { path: 'projetos/:slug/:id', component: ProjetosComponent},
   { path: 'trabalhos', component: TrabalhosComponent},
   { path: 'blog', component: BlogComponent},
-  { path: 'contato', component: ContatoComponent}
+  { path: 'contato', component: ContatoComponent},
+  { path: 'blog/:slug/:id', component: BlogSingleComponent},
+  { path: 'categoria/:slug/:id', component: CategoriaComponent},
+  { path: 'pagina/:slug/:id', component: PageComponent}
 
 ];
 
@@ -54,10 +62,15 @@ const appRoutes = [
     ConhecaProjetosComponent,
     HomeBannerComponent,
     HomeProjetosComponent,
-    ContatoComponent
+    ContatoComponent,
+    BlogSingleComponent,
+    CategoriaComponent,
+    BlogListaComponent,
+    PageComponent
   ],
   imports: [
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(
       appRoutes,
       {enableTracing: false} // <-- debugging purposes only

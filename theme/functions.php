@@ -108,6 +108,7 @@ function starvai_projetos_all() {
         $projeto->title = $proj->title;
         $projeto->slug = $proj->slug;
         $projeto->resume = $proj->resume;
+        $projeto->img = $proj->img;
 
         $projeto->opcoes = $wpdb->get_results("SELECT a.title, b.opcao FROM wp_projetos_opcoes AS a INNER JOIN wp_opcoes_selecionadas AS b ON a.id = b.opcao WHERE b.projeto = '$proj->id'");
 

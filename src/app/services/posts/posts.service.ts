@@ -4,6 +4,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
+
 export class PostsService {
 
   private url = 'http://starvai.com.br/api/wp-json/wp/v2';
@@ -16,7 +17,18 @@ export class PostsService {
     headers.append('Content-Type', 'application/json');
 
     const response = await this.http.get(this.url + '/' + endpoint, {headers}).toPromise();
-    console.log(response);
+    return response;
+
+  }
+
+  async single(id): Promise<any> {
+
+    const endpoint = 'posts/' + id + '?_embed';
+
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+
+    const response = await this.http.get(this.url + '/' + endpoint, {headers}).toPromise();
     return response;
 
   }

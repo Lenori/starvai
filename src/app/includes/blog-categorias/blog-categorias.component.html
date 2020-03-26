@@ -7,7 +7,7 @@
 
     <ul>
 
-      <li *ngFor="let cat of categorias">{{cat.name}}</li>
+      <a *ngFor="let cat of categorias" routerLink="/categoria/{{cat.slug}}/{{cat.id}}"><li>{{cat.name}}</li></a>
 
     </ul>
 

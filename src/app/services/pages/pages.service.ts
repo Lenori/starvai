@@ -4,13 +4,13 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class CategoriasService {
+export class PagesService {
 
   private url = 'http://starvai.com.br/api/wp-json/wp/v2';
 
   async all(): Promise<any> {
 
-    const endpoint = 'categories';
+    const endpoint = 'pages';
 
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
@@ -22,7 +22,7 @@ export class CategoriasService {
 
   async single(id): Promise<any> {
 
-    const endpoint = 'categories/' + id;
+    const endpoint = 'pages/' + id;
 
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');

@@ -2,27 +2,15 @@
 
 <div class="trabalhos">
 
-  <div class="trabalho-item">
+  <div *ngFor="let post of posts" class="trabalho-item">
 
-    <p>Estúdio Mova e Sintese Arquitetura – Home Cinema</p>
+    <a routerLink="/blog/{{post.slug}}/{{post.id}}">
 
-    <img src="../../../assets/job.png" alt="starvai-job" />
+      <p [innerHTML]="post.title.rendered"></p>
 
-  </div>
+      <img src="{{post._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url}}" alt="starvai-job" />
 
-  <div class="trabalho-item">
-
-    <p>Estúdio Mova e Sintese Arquitetura – Home Cinema</p>
-
-    <img src="../../../assets/job.png" alt="starvai-job" />
-
-  </div>
-
-  <div class="trabalho-item">
-
-    <p>Estúdio Mova e Sintese Arquitetura – Home Cinema</p>
-
-    <img src="../../../assets/job.png" alt="starvai-job" />
+    </a>
 
   </div>
 

@@ -14,6 +14,17 @@
 
 }
 
+.contato p {
+
+  font-weight: 600;
+  color: white;
+  margin: 50px auto;
+  border-bottom: 2px solid #a7ce41;
+  padding: 0 0 10px 0;
+  width: 350px;
+
+}
+
 ::placeholder {
 
   color: white;

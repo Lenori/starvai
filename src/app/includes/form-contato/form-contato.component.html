@@ -4,20 +4,23 @@
 
     <h4>SURGIU ALGUMA DÚVIDA?</h4>
 
-    <form>
+    <form *ngIf="!sent">
 
       <div class="input-half">
 
-        <input type="text" name="nome" id="nome" placeholder="Nome" />
-        <input type="text" name="email" id="email" placeholder="E-mail" />
+        <input type="text" name="nome" id="nome" placeholder="Nome" [(ngModel)]="form.name" #name="ngModel" />
+        <input type="text" name="email" id="email" placeholder="E-mail" [(ngModel)]="form.email" #email="ngModel" />
 
       </div>
 
-      <textarea class="input-half" name="msg" id="msg" placeholder="Mensagem"></textarea>
+      <textarea class="input-half" name="msg" id="msg" placeholder="Mensagem" [(ngModel)]="form.msg" #msg="ngModel"></textarea>
 
-      <button>ENVIAR MENSAGEM</button>
+      <button (click)="onSubmit()">{{loading ? 'CARREGANDO...' : 'ENVIAR MENSAGEM'}}</button>
+      <button><a href="https://wa.me/5561982889782?text=Olá!%20Estou%20interessado%20nos%20serviços%20da%20Starvai" target="_blank">OU CONVERSE POR WHATSAPP</a></button>
 
     </form>
+
+    <p *ngIf="sent">{{message}}</p>
 
   </div>
 

@@ -11,6 +11,7 @@ export class HomeProjetosComponent implements OnInit {
   projetos: any;
   seletor: any;
   slug: any;
+  img: any;
 
   constructor(
     private projetosService: ProjetosService
@@ -21,6 +22,7 @@ export class HomeProjetosComponent implements OnInit {
     this.projetosService.all().then(
       data => {
         this.projetos = data;
+        console.log(this.projetos);
         this.seletor = this.projetos[0].id;
         this.slug = this.projetos[0].slug;
       }

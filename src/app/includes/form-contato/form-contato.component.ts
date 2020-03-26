@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ContatoService} from '../../services/contato/contato.service';
 
 @Component({
   selector: 'app-form-contato',
@@ -7,9 +8,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormContatoComponent implements OnInit {
 
-  constructor() { }
+  form: any = {};
+  loading: any;
+  sent: any;
+  message: any;
+
+  constructor(
+    private contatoService: ContatoService
+  ) { }
+
+  onSubmit() {
+
+    this.loading = true;
+
+    this.contatoService.send(this.form.name, this.form.email, this.form.msg).then(
+      data => {
+        if (data.success === true) {
+          this.message = data.message;
+          this.sent = true;
+        } else if (data.error === true) {
+          this.message = data.message;
+          this.sent = true;
+        }
+        this.loading = false;
+      }
+    );
+
+  }
 
   ngOnInit() {
+
+    this.sent = false;
+    this.loading = false;
+
   }
 
 }
