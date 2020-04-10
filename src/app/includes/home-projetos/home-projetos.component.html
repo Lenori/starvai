@@ -31,7 +31,7 @@
     </ng-container>
 
     <a routerLink="/projetos/{{slug}}/{{seletor}}"><button>SAIBA MAIS</button></a>
-    <a routerLink="/contato"><button>FAZER ORÇAMENTO</button></a>
+    <a [routerLink] = "[href]"  fragment="contato-form"><button>FAZER ORÇAMENTO</button></a>
 
   </div>
 

@@ -73,7 +73,11 @@ const appRoutes = [
     FormsModule,
     RouterModule.forRoot(
       appRoutes,
-      {enableTracing: false} // <-- debugging purposes only
+      {
+        enableTracing: false, // <-- debugging purposes only
+        anchorScrolling: 'enabled',
+        onSameUrlNavigation: 'reload'
+      }
     ),
     BrowserModule,
     RouterModule

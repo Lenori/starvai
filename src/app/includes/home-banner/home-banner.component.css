@@ -1,7 +1,7 @@
 .home-banner {
 
   background-color: #2e2e2e;
-  padding: 20px 0 60px;
+  padding: 230px 0 60px;
   text-align: center;
 
 }
@@ -58,7 +58,27 @@
 
 }
 
+@media screen and (max-width: 1080px ) {
+
+  .home-banner {
+    padding: 290px 0 60px;
+  }
+
+}
+
+@media screen and (max-width: 900px ) {
+
+  .home-banner {
+    padding: 360px 0 60px;
+  }
+
+}
+
 @media screen and (max-width: 800px ) {
+
+  .home-banner {
+    padding: 270px 0 60px;
+  }
 
   .home-banner-item img {
     width: 90%;

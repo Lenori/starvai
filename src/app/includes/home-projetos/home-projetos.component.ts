@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ProjetosService} from '../../services/projetos/projetos.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home-projetos',
@@ -12,12 +13,16 @@ export class HomeProjetosComponent implements OnInit {
   seletor: any;
   slug: any;
   img: any;
+  href: any;
 
   constructor(
-    private projetosService: ProjetosService
+    private projetosService: ProjetosService,
+    private router: Router
   ) { }
 
   ngOnInit() {
+
+    this.href = this.router.url;
 
     this.projetosService.all().then(
       data => {

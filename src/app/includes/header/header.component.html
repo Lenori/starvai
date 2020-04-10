@@ -1,54 +1,59 @@
-<div class="super-header">
+<div class="fixed-header">
 
-  <div class="content">
+  <div class="super-header">
 
-    <div class="top-info">
+    <div class="content">
 
-      <ul class="top-left">
+      <div class="top-info">
 
-        <li>+55 61 3436 - 0002</li>
-        <li>|</li>
-        <li>contato@starvai.com.br</li>
-        <li>|</li>
-        <li>Seg-Sex 09h às 18h</li>
+        <ul class="top-left">
 
-      </ul>
+          <li>+55 61 3436 - 0002</li>
+          <li>|</li>
+          <li>contato@starvai.com.br</li>
+          <li>|</li>
+          <li>Seg-Sex 09h às 18h</li>
 
-      <ul class="top-right">
+        </ul>
 
-        <a target="_blank" href="https://www.facebook.com/starvai"><li><i class="fab fa-facebook-f"></i></li></a>
-        <a target="_blank" href="https://www.instagram.com/starvai.tecnologia"><li><i class="fab fa-instagram"></i></li></a>
-        <a target="_blank" href="https://www.youtube.com/user/starvaitecnologia"><li><i class="fab fa-youtube"></i></li></a>
+        <ul class="top-right">
 
-      </ul>
+          <a target="_blank" href="https://wa.me/556134360002?text=Olá!%20Estou%20interessado%20nos%20serviços%20da%20Starvai"><li><i class="fab fa-whatsapp"></i></li></a>
+          <a target="_blank" href="https://www.facebook.com/starvai"><li><i class="fab fa-facebook-f"></i></li></a>
+          <a target="_blank" href="https://www.instagram.com/starvai.tecnologia"><li><i class="fab fa-instagram"></i></li></a>
+          <a target="_blank" href="https://www.youtube.com/user/starvaitecnologia"><li><i class="fab fa-youtube"></i></li></a>
+
+        </ul>
+
+      </div>
 
     </div>
 
   </div>
 
-</div>
+  <div class="header">
 
-<div class="header">
+    <div class="content">
 
-  <div class="content">
+      <div class="menu" id="menu">
 
-    <div class="menu">
+        <a routerLink=""><img src="../../../assets/logo.png" alt="starvai-logo" /></a>
 
-      <a routerLink=""><img src="../../../assets/logo.png" alt="starvai-logo" /></a>
+        <i id="openMenu" (click)="menuControl('on')" class="fas fa-bars"></i>
 
-      <i id="openMenu" (click)="menuControl('on')" class="fas fa-bars"></i>
+        <ul id="mainMenu">
 
-      <ul id="mainMenu">
+          <i id="closeMenu" (click)="menuControl('off')" class="fas fa-times"></i>
 
-        <i id="closeMenu" (click)="menuControl('off')" class="fas fa-times"></i>
+          <a routerLink="/pagina/a-starvai/2834"><li>EMPRESA</li></a>
+          <a routerLink="/pagina/nossos-servicos/2836"><li>NOSSOS SERVIÇOS</li></a>
+          <a routerLink="/trabalhos"><li>PROJETOS EXECUTADOS</li></a>
+          <a routerLink="/blog"><li>BLOG</li></a>
+          <a routerLink="/contato"><li>CONTATO</li></a>
 
-        <a routerLink="/pagina/a-starvai/2834"><li>EMPRESA</li></a>
-        <a routerLink="/pagina/a-starvai/2836"><li>NOSSOS SERVIÇOS</li></a>
-        <a routerLink="/trabalhos"><li>PROJETOS EXECUTADOS</li></a>
-        <a routerLink="/blog"><li>BLOG</li></a>
-        <a routerLink="/contato"><li>CONTATO</li></a>
+        </ul>
 
-      </ul>
+      </div>
 
     </div>
 

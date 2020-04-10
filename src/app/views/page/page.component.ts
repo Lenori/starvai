@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {PagesService} from '../../services/pages/pages.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-page',
@@ -15,8 +15,13 @@ export class PageComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private pagesService: PagesService
-  ) { }
+    private pagesService: PagesService,
+    private router: Router
+  ) {
+
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+
+  }
 
   ngOnInit() {
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {PostsService} from '../../services/posts/posts.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import {CategoriasService} from '../../services/categorias/categorias.service';
 
 @Component({
   selector: 'app-blog-single',
@@ -12,11 +13,20 @@ export class BlogSingleComponent implements OnInit {
   id: any;
   post: any;
   titulo: any;
+  categorias: any;
+  populares: any;
+  postagens: any;
 
   constructor(
     private route: ActivatedRoute,
-    private postsService: PostsService
-  ) { }
+    private categoriasService: CategoriasService,
+    private postsService: PostsService,
+    private router: Router
+  ) {
+
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+
+  }
 
   ngOnInit() {
 
@@ -26,6 +36,21 @@ export class BlogSingleComponent implements OnInit {
       data => {
         this.post = data;
         this.titulo = data.title.rendered;
+        this.postsService.pageView(this.id).then(
+          view => {
+            this.postsService.populares().then(
+              pop => {
+                this.populares = pop;
+                console.log(this.populares);
+              }
+            );
+            this.categoriasService.all().then(
+              cat => {
+                this.categorias = cat;
+              }
+            );
+          }
+        );
       }
     );
 

@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContatoComponent implements OnInit {
 
+  titulo = 'Contato';
+  texto = 'Já tem uma ideia para o seu projeto? Conte os detalhes e deixe a gente transformá-lo em realidade!';
+
   constructor() { }
 
   ngOnInit() {

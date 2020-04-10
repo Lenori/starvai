@@ -33,6 +33,36 @@ export class PostsService {
 
   }
 
+  async pageView(id): Promise<any> {
+
+    const endpoint = 'page_view/' + id;
+
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+
+    const response = await this.http.get(this.url + '/' + endpoint, {headers}).toPromise();
+    return response;
+
+  }
+
+  async populares(): Promise<any> {
+
+    const endpoint1 = 'populares/';
+
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+
+    const populares = await this.http.get(this.url + '/' + endpoint1, {headers}).toPromise();
+
+    console.log(populares);
+
+    const endpoint2 = 'posts';
+
+    const response = await this.http.get(this.url + '/' + endpoint2 + '?include[]=' + populares[0] + '&include[]=' + populares[1] + '&include[]=' + populares[2] + '&_embed', {headers}).toPromise();
+    return response;
+
+  }
+
   constructor(
     private http: HttpClient
   ) { }

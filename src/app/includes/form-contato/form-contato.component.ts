@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {ContatoService} from '../../services/contato/contato.service';
 
 @Component({
@@ -7,6 +7,9 @@ import {ContatoService} from '../../services/contato/contato.service';
   styleUrls: ['./form-contato.component.css']
 })
 export class FormContatoComponent implements OnInit {
+
+  @Input()
+  paginaContato: boolean;
 
   form: any = {};
   loading: any;

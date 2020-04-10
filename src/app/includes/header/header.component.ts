@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    @Inject(DOCUMENT) private document: Document
+  ) { }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+
+    if (document.body.scrollTop > 20 ||
+      document.documentElement.scrollTop > 20) {
+      document.getElementById('menu').classList.remove('menu');
+      document.getElementById('menu').classList.add('menu-fixed');
+    } else {
+      document.getElementById('menu').classList.remove('menu-fixed');
+      document.getElementById('menu').classList.add('menu');
+    }
+
+  }
 
   menuControl(order) {
 

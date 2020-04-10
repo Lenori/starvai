@@ -1,8 +1,8 @@
-<div class="contato">
+<div class="contato" id="contato-form">
 
   <div class="content">
 
-    <h4>SURGIU ALGUMA DÚVIDA?</h4>
+    <h4 *ngIf="paginaContato == false || paginaContato == null">SURGIU ALGUMA DÚVIDA?</h4>
 
     <form *ngIf="!sent">
 
@@ -15,8 +15,14 @@
 
       <textarea class="input-half" name="msg" id="msg" placeholder="Mensagem" [(ngModel)]="form.msg" #msg="ngModel"></textarea>
 
+      <div class="checkbox">
+
+        <input type="checkbox" name="option" id="option" [(ngModel)]="form.option" #option="ngModel" /><p>Gostaria de receber novidades da Starvai e concorrer a convites para eventos exclusivos.</p>
+
+      </div>
+
       <button (click)="onSubmit()">{{loading ? 'CARREGANDO...' : 'ENVIAR MENSAGEM'}}</button>
-      <button><a href="https://wa.me/5561982889782?text=Olá!%20Estou%20interessado%20nos%20serviços%20da%20Starvai" target="_blank">OU CONVERSE POR WHATSAPP</a></button>
+      <button><a href="https://wa.me/556134360002?text=Olá!%20Estou%20interessado%20nos%20serviços%20da%20Starvai" target="_blank">OU CONVERSE POR WHATSAPP</a></button>
 
     </form>
 

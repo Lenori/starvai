@@ -7,11 +7,94 @@
 .blog-single-img {
 
   text-align: center;
+  padding: 0 180px 0 100px;
 
 }
 
 .blog-single-content {
 
   margin: 40px auto 0;
+  padding: 0 180px 0 100px;
 
 }
+
+.blog-content {
+
+  width: 75%;
+  float: left;
+
+}
+
+.blog-sidebar {
+
+  width: 25%;
+  float: left;
+
+}
+
+.blog-sidebar h2 {
+
+  font-size: 20px;
+  text-align: left;
+
+}
+
+.blog-sidebar ul {
+
+  text-align: left;
+  font-weight: 100;
+  list-style-type: none;
+  padding: 0 0 30px;
+  border-bottom: 1px solid #a7ce41;
+  margin-bottom: 50px;
+
+}
+
+.blog-sidebar li {
+
+  font-size: 18px;
+  margin: 0 0 25px;
+
+}
+
+.mais-lido {
+
+  margin: 40px 0;
+  width: 80%;
+
+}
+
+.mais-lido img {
+
+  width: 80px;
+  float: left;
+  margin: 0 10px 0 0;
+
+}
+
+.mais-lido p {
+
+  margin: 0;
+
+}
+
+@media screen and (max-width: 1180px) {
+
+  .blog-content {
+    width: 100%;
+  }
+
+  .blog-single-img {
+    padding: 0;
+  }
+
+  .blog-single-content {
+    padding: 0;
+  }
+
+  .blog-sidebar {
+    width: 100%;
+  }
+
+}
+

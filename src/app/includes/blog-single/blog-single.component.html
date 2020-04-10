@@ -2,15 +2,44 @@
 
 <div class="blog-single">
 
-  <div class="content">
+  <div class="blog-content">
 
-    <div class="blog-single-img">
+    <div class="content">
 
-      <img src="{{post._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url}}" alt="post" />
+      <div class="blog-single-img">
+
+        <img src="{{post._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url}}" alt="post" />
+
+      </div>
+
+      <div class="blog-single-content" [innerHTML]="post.content.rendered"></div>
 
     </div>
 
-    <div class="blog-single-content" [innerHTML]="post.content.rendered"></div>
+  </div>
+
+  <div class="blog-sidebar">
+
+    <h2>TODAS AS CATEGORIAS</h2>
+
+    <ul>
+
+      <a *ngFor="let cat of categorias" routerLink="/categoria/{{cat.slug}}/{{cat.id}}"><li>{{cat.name}}</li></a>
+
+    </ul>
+
+    <h2>MAIS LIDOS</h2>
+
+    <div class="mais-lidos">
+
+      <a *ngFor="let popular of populares" routerLink="/blog/{{popular.slug}}/{{popular.id}}" ><div class="mais-lido">
+
+        <img src="{{popular._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url}}" alt="post-image" />
+        <p [innerHTML]="popular.title.rendered"></p>
+
+      </div></a>
+
+    </div>
 
   </div>
 
