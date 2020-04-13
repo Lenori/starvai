@@ -37,6 +37,7 @@ const appRoutes = [
   { path: 'blog', component: BlogComponent},
   { path: 'contato', component: ContatoComponent},
   { path: 'blog/:slug/:id', component: BlogSingleComponent},
+  { path: 'projeto/:slug/:id', component: BlogSingleComponent},
   { path: 'categoria/:slug/:id', component: CategoriaComponent},
   { path: 'pagina/:slug/:id', component: PageComponent}
 

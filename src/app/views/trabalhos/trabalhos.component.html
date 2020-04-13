@@ -4,10 +4,9 @@
 
   <div *ngFor="let post of posts" class="trabalho-item">
 
-    <a routerLink="/blog/{{post.slug}}/{{post.id}}">
+    <a routerLink="/projeto/{{post.slug}}/{{post.id}}">
 
       <p [innerHTML]="post.title.rendered"></p>
-
       <img src="{{post._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url}}" alt="starvai-job" />
 
     </a>

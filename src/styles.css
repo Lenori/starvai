@@ -20,6 +20,13 @@ a:hover {
 
 }
 
+.site-content a {
+
+  color: #849e3f;
+  font-weight: 600;
+
+}
+
 body {
 
   font-family: 'Open Sans', sans-serif !important;

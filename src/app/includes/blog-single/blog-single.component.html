@@ -4,7 +4,7 @@
 
   <div class="blog-content">
 
-    <div class="content">
+    <div class="content site-content">
 
       <div class="blog-single-img">
 
@@ -38,6 +38,30 @@
         <p [innerHTML]="popular.title.rendered"></p>
 
       </div></a>
+
+    </div>
+
+  </div>
+
+  <div class="blog-related">
+
+    <h2>POSTAGENS RELACIONADAS</h2>
+
+    <div class="blog-related-items">
+
+      <a *ngFor="let popular of populares" routerLink="/blog/{{popular.slug}}/{{popular.id}}">
+
+        <div class="related-item">
+
+          <div class="related-item-img">
+            <img src="{{popular._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url}}" alt="post-image" />
+          </div>
+
+          <p [innerHTML]="popular.title.rendered"></p>
+
+        </div>
+
+      </a>
 
     </div>
 

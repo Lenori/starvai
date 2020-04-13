@@ -76,12 +76,24 @@
     padding: 70px 0 0;
   }
 
+  .etapas-item {
+    margin-bottom: 50px;
+  }
+
+}
+
+@media screen and (max-width: 900px) {
+
   .etapas-items {
-    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .etapas-items:last-of-type {
+    padding: 15px 0 0;
   }
 
   .etapas-item {
-    margin-bottom: 50px;
+    width: 50%;
   }
 
 }
