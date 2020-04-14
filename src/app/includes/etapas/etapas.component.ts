@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {EtapasService} from '../../services/etapas/etapas.service';
 
 @Component({
   selector: 'app-etapas',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EtapasComponent implements OnInit {
 
-  constructor() { }
+  etapas: any;
+  openEtapa: any;
+
+  constructor(
+    private etapasService: EtapasService
+  ) { }
 
   ngOnInit() {
+
+    this.etapasService.all().then(
+      data => {
+        this.etapas = data;
+      }
+    );
+
   }
 
 }

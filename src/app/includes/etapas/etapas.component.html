@@ -3,26 +3,16 @@
   <div class="content">
 
     <h2>ETAPAS DA INSTALAÇÃO</h2>
+    <p>Clique nos ícones para saber mais</p>
 
     <div class="etapas-items">
 
-      <div class="etapas-item">
+      <div (click)="openEtapa = etapas[0].id" class="etapas-item">
 
-        <i class="fas fa-clipboard-list"></i>
-        <p>CONSULTA</p>
+        <i *ngIf="openEtapa != etapas[0].id" class="{{etapas[0].icon}}"></i>
+        <p *ngIf="openEtapa != etapas[0].id">{{etapas[0].title}}</p>
 
-      </div>
-
-      <div class="etapas-div">
-
-        <div></div>
-
-      </div>
-
-      <div class="etapas-item">
-
-        <i class="fas fa-pencil-ruler"></i>
-        <p>PROJETO</p>
+        <span *ngIf="openEtapa == etapas[0].id">{{etapas[0].text}}</span>
 
       </div>
 
@@ -32,10 +22,12 @@
 
       </div>
 
-      <div class="etapas-item">
+      <div (click)="openEtapa = etapas[1].id" class="etapas-item">
 
-        <i class="fas fa-network-wired"></i>
-        <p>CABEAMENTO</p>
+        <i *ngIf="openEtapa != etapas[1].id" class="{{etapas[1].icon}}"></i>
+        <p *ngIf="openEtapa != etapas[1].id">{{etapas[1].title}}</p>
+
+        <span *ngIf="openEtapa == etapas[1].id">{{etapas[1].text}}</span>
 
       </div>
 
@@ -45,10 +37,27 @@
 
       </div>
 
-      <div class="etapas-item">
+      <div (click)="openEtapa = etapas[2].id" class="etapas-item">
 
-        <i class="fas fa-tv"></i>
-        <p>EQUIPAMENTOS</p>
+        <i *ngIf="openEtapa != etapas[2].id" class="{{etapas[2].icon}}"></i>
+        <p *ngIf="openEtapa != etapas[2].id">{{etapas[2].title}}</p>
+
+        <span *ngIf="openEtapa == etapas[2].id">{{etapas[2].text}}</span>
+
+      </div>
+
+      <div class="etapas-div">
+
+        <div></div>
+
+      </div>
+
+      <div (click)="openEtapa = etapas[3].id" class="etapas-item">
+
+        <i *ngIf="openEtapa != etapas[3].id" class="{{etapas[3].icon}}"></i>
+        <p *ngIf="openEtapa != etapas[3].id">{{etapas[3].title}}</p>
+
+        <span *ngIf="openEtapa == etapas[3].id">{{etapas[3].text}}</span>
 
       </div>
 
@@ -56,23 +65,12 @@
 
     <div class="etapas-items">
 
-      <div class="etapas-item">
+      <div (click)="openEtapa = etapas[4].id" class="etapas-item">
 
-        <i class="fas fa-cogs"></i>
-        <p>DESENVOLVIMENTO</p>
+        <i *ngIf="openEtapa != etapas[4].id" class="{{etapas[4].icon}}"></i>
+        <p *ngIf="openEtapa != etapas[4].id">{{etapas[4].title}}</p>
 
-      </div>
-
-      <div class="etapas-div">
-
-        <div></div>
-
-      </div>
-
-      <div class="etapas-item">
-
-        <i class="fas fa-truck"></i>
-        <p>ENTREGA</p>
+        <span *ngIf="openEtapa == etapas[4].id">{{etapas[4].text}}</span>
 
       </div>
 
@@ -82,10 +80,27 @@
 
       </div>
 
-      <div class="etapas-item">
+      <div (click)="openEtapa = etapas[5].id" class="etapas-item">
 
-        <i class="fas fa-phone"></i>
-        <p>PÓS-VENDA</p>
+        <i *ngIf="openEtapa != etapas[5].id" class="{{etapas[5].icon}}"></i>
+        <p *ngIf="openEtapa != etapas[5].id">{{etapas[5].title}}</p>
+
+        <span *ngIf="openEtapa == etapas[5].id">{{etapas[5].text}}</span>
+
+      </div>
+
+      <div class="etapas-div">
+
+        <div></div>
+
+      </div>
+
+      <div (click)="openEtapa = etapas[6].id" class="etapas-item">
+
+        <i *ngIf="openEtapa != etapas[6].id" class="{{etapas[6].icon}}"></i>
+        <p *ngIf="openEtapa != etapas[6].id">{{etapas[6].title}}</p>
+
+        <span *ngIf="openEtapa == etapas[6].id">{{etapas[6].text}}</span>
 
       </div>
 

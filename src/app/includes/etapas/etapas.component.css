@@ -5,6 +5,15 @@
 
 }
 
+.etapas p {
+
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 11px;
+
+}
+
 .etapas h2 {
 
   color: white;
@@ -38,11 +47,23 @@
 
 }
 
+.etapas-item i:hover {
+
+  color: #7c9c29;
+
+}
+
 .etapas-item p {
 
   color: white;
   font-weight: 100;
   font-size: 14px;
+
+}
+
+.etapas-item span {
+
+  color: white;
 
 }
 
