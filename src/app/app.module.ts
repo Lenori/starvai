@@ -28,11 +28,13 @@ import { BlogSingleComponent } from './includes/blog-single/blog-single.componen
 import { CategoriaComponent } from './views/categoria/categoria.component';
 import { BlogListaComponent } from './includes/blog-lista/blog-lista.component';
 import { PageComponent } from './views/page/page.component';
+import { SolucoesComponent } from './views/solucoes/solucoes.component';
 
 const appRoutes = [
 
   { path: '', component: HomeComponent},
   { path: 'projetos/:slug/:id', component: ProjetosComponent},
+  { path: 'solucoes', component: SolucoesComponent},
   { path: 'trabalhos', component: TrabalhosComponent},
   { path: 'blog', component: BlogComponent},
   { path: 'contato', component: ContatoComponent},
@@ -67,7 +69,8 @@ const appRoutes = [
     BlogSingleComponent,
     CategoriaComponent,
     BlogListaComponent,
-    PageComponent
+    PageComponent,
+    SolucoesComponent
   ],
   imports: [
     HttpClientModule,

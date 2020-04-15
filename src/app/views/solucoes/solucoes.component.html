@@ -1,0 +1,18 @@
+<app-title [titulo]="titulo" [subtitulo]="subtitulo"></app-title>
+
+<div class="trabalhos">
+
+  <div *ngFor="let post of posts" class="trabalho-item">
+
+    <a routerLink="/projeto/{{post.slug}}/{{post.id}}">
+
+      <p [innerHTML]="post.title.rendered"></p>
+      <img src="{{post._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url}}" alt="starvai-job" />
+
+    </a>
+
+  </div>
+
+</div>
+
+<app-form-contato></app-form-contato>

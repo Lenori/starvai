@@ -1,0 +1,64 @@
+.trabalhos {
+
+  display: flex;
+  justify-items: center;
+  flex-wrap: wrap;
+
+}
+
+.trabalho-item {
+
+  height: 275px;
+  width: 33.33%;
+  position: relative;
+  background-color: #A7CE41;
+
+}
+
+.trabalho-item img {
+
+  width: 100%;
+  min-height: 320px;
+
+}
+
+.trabalho-item img:hover {
+
+  opacity: 0.3;
+
+}
+
+.trabalho-item p {
+
+  position: absolute;
+  bottom: 0;
+  color: white;
+  font-weight: 100;
+  background-color: #000000c7;
+  padding: 20px;
+  margin: 0;
+  font-size: 15px;
+  z-index: 100;
+
+}
+
+@media screen and (max-width: 1280px) {
+
+  .trabalho-item {
+    width: 50%;
+  }
+
+}
+
+@media screen and (max-width: 900px) {
+
+  .trabalho-item {
+    width: 100%;
+    height: auto;
+  }
+
+  .trabalho-item img {
+    width: 100%;
+  }
+
+}
