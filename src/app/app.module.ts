@@ -29,6 +29,10 @@ import { CategoriaComponent } from './views/categoria/categoria.component';
 import { BlogListaComponent } from './includes/blog-lista/blog-lista.component';
 import { PageComponent } from './views/page/page.component';
 import { SolucoesComponent } from './views/solucoes/solucoes.component';
+import { MarcasComponent } from './views/marcas/marcas.component';
+import { HomeMarcasComponent } from './includes/home-marcas/home-marcas.component';
+import { HomeParceirosComponent } from './includes/home-parceiros/home-parceiros.component';
+import { ParceirosComponent } from './views/parceiros/parceiros.component';
 
 const appRoutes = [
 
@@ -36,6 +40,8 @@ const appRoutes = [
   { path: 'projetos/:slug/:id', component: ProjetosComponent},
   { path: 'solucoes', component: SolucoesComponent},
   { path: 'trabalhos', component: TrabalhosComponent},
+  { path: 'marcas', component: MarcasComponent},
+  { path: 'parceiros', component: ParceirosComponent},
   { path: 'blog', component: BlogComponent},
   { path: 'contato', component: ContatoComponent},
   { path: 'blog/:slug/:id', component: BlogSingleComponent},
@@ -70,7 +76,11 @@ const appRoutes = [
     CategoriaComponent,
     BlogListaComponent,
     PageComponent,
-    SolucoesComponent
+    SolucoesComponent,
+    MarcasComponent,
+    HomeMarcasComponent,
+    HomeParceirosComponent,
+    ParceirosComponent
   ],
   imports: [
     HttpClientModule,

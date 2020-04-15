@@ -1,0 +1,22 @@
+<app-title [titulo]="titulo" [subtitulo]="subtitulo"></app-title>
+
+<div class="marcas">
+
+  <div class="content">
+
+    <div class="marca-items">
+
+      <div *ngFor="let post of posts" class="marca-item">
+
+        <img src="{{post._embedded['wp:featuredmedia'][0].source_url}}" alt="starvai-marcas" />
+        <p [innerHTML]="post.title.rendered"></p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<app-form-contato></app-form-contato>

@@ -1,0 +1,23 @@
+<div class="marcas" style="background-color: white !important;">
+
+  <div class="content">
+
+    <h2>NOSSOS PARCEIROS DE CONFIANÇA</h2>
+
+    <a routerLink="/parceiros"><div class="marca-items">
+
+      <ng-container *ngFor="let post of posts; let i = index" >
+
+        <div *ngIf="i >= this.min && i <= this.max" class="marca-item">
+
+          <img src="{{post._embedded['wp:featuredmedia'][0].source_url}}" alt="starvai-marcas" />
+
+        </div>
+
+      </ng-container>
+
+    </div></a>
+
+  </div>
+
+</div>
