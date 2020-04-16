@@ -42,6 +42,27 @@
 
 }
 
+.slider-controls {
+
+  width: 13%;
+  margin: 30px auto 10px;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.slider-controls i {
+
+  color: white;
+
+}
+
+.slider-controls > .active {
+
+  color: #A7CE41;
+
+}
+
 @media screen and (max-width: 1180px ) {
 
   .home-banner-items {

@@ -14,6 +14,8 @@
 
       <div class="blog-single-content" [innerHTML]="post.content.rendered"></div>
 
+      <app-social-share [title]="titulo"></app-social-share>
+
     </div>
 
   </div>
@@ -28,7 +30,7 @@
 
     </ul>
 
-    <h2>MAIS LIDOS</h2>
+    <h2>POSTS MAIS LIDOS</h2>
 
     <div class="mais-lidos">
 
@@ -49,19 +51,23 @@
 
     <div class="blog-related-items">
 
-      <a *ngFor="let popular of populares" routerLink="/blog/{{popular.slug}}/{{popular.id}}">
+      <ng-container *ngFor="let rel of related; let i = index">
 
-        <div class="related-item">
+        <a *ngIf="rel.id != post.id && i < 4" routerLink="/blog/{{rel.slug}}/{{rel.id}}">
 
-          <div class="related-item-img">
-            <img src="{{popular._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url}}" alt="post-image" />
+          <div class="related-item">
+
+            <div class="related-item-img">
+              <img src="{{rel._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url}}" alt="post-image" />
+            </div>
+
+            <p [innerHTML]="rel.title.rendered"></p>
+
           </div>
 
-          <p [innerHTML]="popular.title.rendered"></p>
+        </a>
 
-        </div>
-
-      </a>
+      </ng-container>
 
     </div>
 

@@ -1,0 +1,36 @@
+.social-share {
+
+  width: 100%;
+  padding: 40px 100px 0;
+
+}
+
+.social-share p {
+
+  margin: 0 10px 0 0;
+  float: left;
+  font-weight: 100;
+
+}
+
+.social-share i {
+
+  margin: 0 10px;
+  font-size: 20px;
+  float: left;
+
+}
+
+#copy-success {
+
+  display: none;
+
+}
+
+@media screen and (max-width: 1180px) {
+
+  .social-share {
+    padding: 40px 0 0;
+  }
+
+}

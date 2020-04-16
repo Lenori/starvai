@@ -33,6 +33,8 @@ import { MarcasComponent } from './views/marcas/marcas.component';
 import { HomeMarcasComponent } from './includes/home-marcas/home-marcas.component';
 import { HomeParceirosComponent } from './includes/home-parceiros/home-parceiros.component';
 import { ParceirosComponent } from './views/parceiros/parceiros.component';
+import { FormArquitetoComponent } from './includes/form-arquiteto/form-arquiteto.component';
+import { SocialShareComponent } from './includes/social-share/social-share.component';
 
 const appRoutes = [
 
@@ -80,7 +82,9 @@ const appRoutes = [
     MarcasComponent,
     HomeMarcasComponent,
     HomeParceirosComponent,
-    ParceirosComponent
+    ParceirosComponent,
+    FormArquitetoComponent,
+    SocialShareComponent
   ],
   imports: [
     HttpClientModule,

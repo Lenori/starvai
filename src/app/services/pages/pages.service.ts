@@ -6,7 +6,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 })
 export class PagesService {
 
-  private url = 'http://starvai.com.br/api/wp-json/wp/v2';
+  private url = 'https://starvai.com.br/api/wp-json/wp/v2';
 
   async all(): Promise<any> {
 
@@ -27,7 +27,7 @@ export class PagesService {
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
 
-    const response = await this.http.get(this.url + '/' + endpoint, {headers}).toPromise();
+    const response = await this.http.get(this.url + '/' + endpoint + '?_embed', {headers}).toPromise();
     return response;
 
   }

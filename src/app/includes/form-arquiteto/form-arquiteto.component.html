@@ -1,0 +1,51 @@
+<div class="contrate-arquiteto">
+
+  <div class="content site-content">
+
+    <h2>{{page.title.rendered}}</h2>
+
+    <div class="page-content" [innerHTML]="page.content.rendered"></div>
+
+    <div class="arquiteto-img">
+
+      <img src="{{page._embedded['wp:featuredmedia'][0].source_url}}" alt="contrate-arquiteto" />
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="contato" id="contato-form">
+
+  <div class="content">
+
+    <h4 *ngIf="paginaContato == false || paginaContato == null">CONTRATE UM ARQUITETO</h4>
+
+    <form *ngIf="!sent">
+
+      <div class="input-half">
+
+        <input type="text" name="nome" id="nome" placeholder="Nome" [(ngModel)]="form.name" #name="ngModel" />
+        <input type="text" name="email" id="email" placeholder="E-mail" [(ngModel)]="form.email" #email="ngModel" />
+
+      </div>
+
+      <textarea class="input-half" name="msg" id="msg" placeholder="Mensagem" [(ngModel)]="form.msg" #msg="ngModel"></textarea>
+
+      <div class="checkbox">
+
+        <input type="checkbox" name="option" id="option" [(ngModel)]="form.option" #option="ngModel" /><p>Gostaria de receber novidades da Starvai e concorrer a convites para eventos exclusivos.</p>
+
+      </div>
+
+      <button (click)="onSubmit()">{{loading ? 'CARREGANDO...' : 'ENVIAR MENSAGEM'}}</button>
+      <button><a href="https://wa.me/556134360002?text=Olá!%20Estou%20interessado%20em%20contratar%20um%20arquiteto%20com%20a%20Starvai" target="_blank">OU CONVERSE POR WHATSAPP</a></button>
+
+    </form>
+
+    <p *ngIf="sent">{{message}}</p>
+
+  </div>
+
+</div>

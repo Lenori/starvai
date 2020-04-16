@@ -1,0 +1,121 @@
+a:hover {
+
+  color: inherit !important;
+
+}
+
+.contato {
+
+  background-color: #2E2E2E;
+  padding: 70px 0;
+  text-align: center;
+
+}
+
+.contato h4 {
+
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+
+}
+
+.contato p {
+
+  font-weight: 600;
+  color: white;
+  margin: 50px auto;
+  border-bottom: 2px solid #a7ce41;
+  padding: 0 0 10px 0;
+  width: 350px;
+
+}
+
+::placeholder {
+
+  color: white;
+
+}
+
+.checkbox input {
+
+  display: inline;
+  float: left;
+  margin: 5px 10px 0 0;
+
+}
+
+.checkbox p {
+
+  text-align: left;
+  border: none;
+  font-weight: 100;
+  width: 30%;
+  margin: 0;
+  float: left;
+  display: inline;
+
+}
+
+.contrate-arquiteto {
+
+  padding: 0 0 20px 0;
+
+}
+
+.contrate-arquiteto h2 {
+
+  text-transform: uppercase;
+  text-align: center;
+
+}
+
+.page-content {
+
+  width: 60%;
+  float: left;
+
+}
+
+.arquiteto-img {
+
+  width: 40%;
+  float: left;
+  text-align: center;
+
+}
+
+input {
+
+  background-color: #1f1f1f;
+  border: none;
+  padding: 17px;
+  font-weight: 200;
+  color: white;
+
+}
+
+textarea {
+
+  background-color: #1f1f1f;
+  border: none;
+  padding: 17px;
+  font-weight: 200;
+  color: white;
+  width: 100%;
+  height: 170px;
+
+}
+
+@media screen and (max-width: 1050px) {
+
+  .page-content {
+    width: 100%;
+    text-align: center;
+  }
+
+  .arquiteto-img {
+    width: 100%;
+  }
+
+}

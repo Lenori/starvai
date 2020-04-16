@@ -2,21 +2,31 @@
 
   <div class="content">
 
-    <div class="home-banner-items">
+    <ng-container *ngFor="let slide of slider">
 
-      <div class="home-banner-item">
+      <div *ngIf="ativo == slide.id" class="home-banner-items">
 
-        <h2>SOLUÇÕES PARA FACILITAR SUA VIDA </h2>
+        <div class="home-banner-item">
 
-        <p>A Starvai tem todas as soluções que vão desde luzes automáticas a assistentes pessoais que cuidam de todas as funções do seu dia a dia. Faça um orçamento sem compromisso e descubra como o tempo que você perde com tarefas simples pode ser melhor aproveitado junto com a sua família!</p>
+          <h2>{{slide.title}}</h2>
+
+          <p>{{slide.text}}</p>
+
+        </div>
+
+        <div class="home-banner-item">
+
+          <img src="{{slide.img}}" alt="home-banner" />
+
+        </div>
 
       </div>
 
-      <div class="home-banner-item">
+    </ng-container>
 
-        <img src="../../../assets/header.png" alt="home-banner" />
+    <div class="slider-controls">
 
-      </div>
+      <i *ngFor="let slide of slider" (click)="changeSlide(slide.id)" class="{{ativo == slide.id ? 'fas fa-circle active' : 'fas fa-circle'}}"></i>
 
     </div>
 

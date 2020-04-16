@@ -15,7 +15,7 @@ export class BlogSingleComponent implements OnInit {
   titulo: any;
   categorias: any;
   populares: any;
-  postagens: any;
+  related;
 
   constructor(
     private route: ActivatedRoute,
@@ -41,7 +41,11 @@ export class BlogSingleComponent implements OnInit {
             this.postsService.populares().then(
               pop => {
                 this.populares = pop;
-                console.log(this.populares);
+              }
+            );
+            this.postsService.all(4, this.post.categories[0]).then(
+              related => {
+                this.related = related;
               }
             );
             this.categoriasService.all().then(

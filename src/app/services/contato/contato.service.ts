@@ -6,7 +6,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 })
 export class ContatoService {
 
-  private url = 'http://starvai.com.br/api/wp-content/themes/starvai';
+  private url = 'https://starvai.com.br/api/wp-content/themes/starvai';
 
   async send(nome, email, msg): Promise<any> {
 

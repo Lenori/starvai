@@ -1,0 +1,11 @@
+<div class="social-share">
+
+  <p>COMPARTILHE ESTE POST</p>
+  <a href="https://www.facebook.com/sharer/sharer.php?u={{url}}&t={{title}}" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+  <a href="https://twitter.com/share?url={{url}}&text={{title}}" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" title="Share on Twitter"><i class="fab fa-twitter"></i></a>
+  <a href="http://wa.me/?text={{url}}" data-action="share/whatsapp/share" onClick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" title="Share on whatsapp"><i class="fab fa-whatsapp"></i></a>
+  <a (click)="copyURL()"><i class="far fa-copy"></i></a>
+
+  <p id="copy-success">URL copiada!</p>
+
+</div>

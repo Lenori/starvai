@@ -4,13 +4,13 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class DepoimentosService {
+export class SliderService {
 
   private url = 'https://starvai.com.br/api/wp-json/wp/v2';
 
   async all(): Promise<any> {
 
-    const endpoint = 'depoimentos';
+    const endpoint = 'slider';
 
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');

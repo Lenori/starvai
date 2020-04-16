@@ -7,7 +7,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 export class PostsService {
 
-  private url = 'http://starvai.com.br/api/wp-json/wp/v2';
+  private url = 'https://starvai.com.br/api/wp-json/wp/v2';
 
   async all(perPage, category): Promise<any> {
 
