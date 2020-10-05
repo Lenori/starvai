@@ -1,20 +1,22 @@
 <app-title [titulo]="titulo"></app-title>
+<div style="overflow: hidden">
+  <div class="blog-single">
 
-<div class="blog-single">
+    <div class="blog-content">
 
-  <div class="blog-content">
+      <div class="content site-content">
 
-    <div class="content site-content">
+        <div class="blog-single-img">
 
-      <div class="blog-single-img">
+          <img src="{{post._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url}}" alt="post" class="img"/>
 
-        <img src="{{post._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url}}" alt="post" />
+        </div>
+
+        <div class="blog-single-content" [innerHTML]="post.content.rendered"></div>
+
+        <app-social-share [title]="titulo"></app-social-share>
 
       </div>
-
-      <div class="blog-single-content" [innerHTML]="post.content.rendered"></div>
-
-      <app-social-share [title]="titulo"></app-social-share>
 
     </div>
 
@@ -25,21 +27,30 @@
     <h2>TODAS AS CATEGORIAS</h2>
 
     <ul>
-
       <a *ngFor="let cat of categorias" routerLink="/categoria/{{cat.slug}}/{{cat.id}}"><li>{{cat.name}}</li></a>
-
     </ul>
+
+  </div>
+
+  <div class="blog-related">
 
     <h2>POSTS MAIS LIDOS</h2>
 
-    <div class="mais-lidos">
+    <div class="blog-related-items">
 
-      <a *ngFor="let popular of populares" routerLink="/blog/{{popular.slug}}/{{popular.id}}" ><div class="mais-lido">
+      <a *ngFor="let popular of populares" routerLink="/blog/{{popular.slug}}/{{popular.id}}">
 
-        <img src="{{popular._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url}}" alt="post-image" />
-        <p [innerHTML]="popular.title.rendered"></p>
+        <div class="related-item">
 
-      </div></a>
+          <div class="related-item-img">
+            <img src="{{popular._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url}}" alt="post-image" />
+          </div>
+
+          <p [innerHTML]="popular.title.rendered"></p>
+
+        </div>
+
+      </a>
 
     </div>
 
@@ -73,6 +84,5 @@
 
   </div>
 
+  <app-form-contato></app-form-contato>
 </div>
-
-<app-form-contato></app-form-contato>
