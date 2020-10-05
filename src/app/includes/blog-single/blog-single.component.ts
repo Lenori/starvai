@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {PostsService} from '../../services/posts/posts.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {CategoriasService} from '../../services/categorias/categorias.service';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-blog-single',
   templateUrl: './blog-single.component.html',
   styleUrls: ['./blog-single.component.css']
 })
-export class BlogSingleComponent implements OnInit {
+export class BlogSingleComponent implements OnInit, OnDestroy {
 
   id: any;
   post: any;
@@ -16,6 +17,8 @@ export class BlogSingleComponent implements OnInit {
   categorias: any;
   populares: any;
   related;
+  hiddenAppendices: boolean;
+  subscriptionRoute: Subscription;
 
   constructor(
     private route: ActivatedRoute,
@@ -25,7 +28,9 @@ export class BlogSingleComponent implements OnInit {
   ) {
 
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-
+    this.subscriptionRoute = this.route.queryParams.subscribe(params => {
+      this.hiddenAppendices = params.hiddenAppendices;
+    });
   }
 
   ngOnInit() {
@@ -60,4 +65,7 @@ export class BlogSingleComponent implements OnInit {
 
   }
 
+  ngOnDestroy(): void {
+    this.subscriptionRoute.unsubscribe();
+  }
 }

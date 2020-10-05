@@ -89,10 +89,6 @@
 
 @media screen and (max-width: 1180px) {
 
-  .blog-content {
-    width: 100%;
-  }
-
   .blog-sidebar {
     padding: 0 10%;
     width: 80%;
@@ -103,7 +99,7 @@
   }
 
   .blog-single-content {
-    padding: 0;
+    padding-left: 8vh
   }
 
   .blog-related {
