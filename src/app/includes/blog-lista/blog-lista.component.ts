@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {PostsService} from '../../services/posts/posts.service';
 
 @Component({
@@ -6,7 +6,7 @@ import {PostsService} from '../../services/posts/posts.service';
   templateUrl: './blog-lista.component.html',
   styleUrls: ['./blog-lista.component.css']
 })
-export class BlogListaComponent implements OnInit {
+export class BlogListaComponent implements OnInit, OnChanges {
 
   @Input()
   categoria: any;
@@ -25,7 +25,7 @@ export class BlogListaComponent implements OnInit {
 
     this.pages++;
 
-    this.postsService.all(3 * this.pages, this.categoria).then(
+    this.postsService.all(4 * this.pages, this.categoria).then(
       posts => {
         this.posts = posts;
         this.loading = false;
@@ -35,17 +35,24 @@ export class BlogListaComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.inicializarCategoria();
+  }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    this.categoria = changes.categoria.currentValue;
+    this.inicializarCategoria();
+  }
+
+  private inicializarCategoria() {
     this.loading = false;
     this.posts = [];
     this.pages = 1;
 
-    this.postsService.all(3 * this.pages, this.categoria).then(
+    this.postsService.all(4 * this.pages, this.categoria).then(
       posts => {
         this.posts = posts;
       }
     );
-
   }
 
 }

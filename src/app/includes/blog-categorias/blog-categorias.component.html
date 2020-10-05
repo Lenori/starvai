@@ -1,16 +1,12 @@
 <div class="categorias">
 
-  <div class="content">
-
     <h2>TODAS AS CATEGORIAS</h2>
     <div class="title-divisor"></div>
 
     <ul>
 
-      <a *ngFor="let cat of categorias" routerLink="/categoria/{{cat.slug}}/{{cat.id}}"><li>{{cat.name}}</li></a>
+      <a *ngFor="let cat of categorias" routerLink="/categoria/{{cat.slug}}/{{cat.id}}" (click)="mudouCategoria.emit(cat.id)"><li>{{cat.name}}</li></a>
 
     </ul>
-
-  </div>
 
 </div>

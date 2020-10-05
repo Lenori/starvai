@@ -12,6 +12,7 @@ export class CategoriaComponent implements OnInit {
   id: any;
   titulo: any;
   categoria: any;
+  listaDeCategorias: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -19,16 +20,26 @@ export class CategoriaComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.buscarNovaCategoria();
+    this.buscarTodasCategorias();
+  }
 
-    this.id = this.route.snapshot.params.id;
+  private buscarNovaCategoria(id?: number) {
+    this.id = id || this.route.snapshot.params.id;
 
     this.categoriasService.single(this.id).then(
       data => {
-        this.categoria = data;
+        this.categoria = Object.assign({}, data);
         this.titulo = this.categoria.name;
       }
     );
-
   }
 
+  private buscarTodasCategorias() {
+    this.categoriasService.all().then(
+      data => {
+        this.listaDeCategorias = data;
+      }
+    );
+  }
 }

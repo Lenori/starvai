@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.container-categorias {
+  width: 30%;
+}
+
+.container-posts {
+  width: 70%;
+}

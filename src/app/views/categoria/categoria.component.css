@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.container-post {
+  width: 70%;
+  padding: 40px;
+}
+
+.container-categorias {
+  width: 30%
+}

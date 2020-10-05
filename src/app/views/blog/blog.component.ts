@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CategoriasService} from '../../services/categorias/categorias.service';
 import {PostsService} from '../../services/posts/posts.service';
 
@@ -10,7 +10,7 @@ import {PostsService} from '../../services/posts/posts.service';
 export class BlogComponent implements OnInit {
 
   categorias: any;
-  posts: any;
+  posts: Array<any>;
 
   titulo = 'Blog';
 
@@ -27,17 +27,40 @@ export class BlogComponent implements OnInit {
       data => {
         this.categorias = data;
         this.categorias.forEach((cat, index) => {
-          if (index < 3) {
-            this.postsService.all('3', cat.id).then(
+            this.postsService.all('100', cat.id).then(
               posts => {
-                this.posts.push(posts);
+                this.posts.push(...this.removerPostsRepetidos(posts, this.posts));
+                if (cat.id === data[data.length - 1].id) {
+                  this.posts = Object.assign(
+                    [],
+                      this.posts.sort(this.funcaoDeOrdenacaoPost)
+                    );
+                }
               }
             );
-          }
         });
       }
     );
 
+  }
+
+  private removerPostsRepetidos(listaDeNovosPosts: Array<any>, listaDePosts: Array<any>): Array<any> {
+    return listaDeNovosPosts.filter(novoPost => !listaDePosts.some(postAntigo => postAntigo.id === novoPost.id));
+  }
+
+  private funcaoDeOrdenacaoPost(postA, postB) {
+    const dataPostA = new Date(postA.modified);
+    const dataPostB = new Date(postB.modified);
+
+    if (dataPostA > dataPostB) {
+      return -1;
+    }
+
+    if (dataPostA < dataPostB) {
+      return 1;
+    }
+
+    return 0;
   }
 
 }

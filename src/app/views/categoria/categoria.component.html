@@ -1,5 +1,9 @@
 <app-title [titulo]="titulo"></app-title>
 
-<app-blog-lista categoria="{{categoria.id}}"></app-blog-lista>
+<div class="container" *ngIf="categoria">
+  <app-blog-lista [categoria]="categoria.id" class="container-post"></app-blog-lista>
+
+  <app-blog-categorias [categorias]="listaDeCategorias" class="container-categorias" (mudouCategoria)="buscarNovaCategoria($event)"></app-blog-categorias>
+</div>
 
 <app-form-contato></app-form-contato>
