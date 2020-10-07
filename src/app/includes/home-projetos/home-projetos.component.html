@@ -2,33 +2,9 @@
 
   <div class="content">
 
-    <ul>
+    <div class="imagem">
 
-      <li *ngFor="let projeto of projetos" (click)="seletor = projeto.id; slug = projeto.slug" [ngClass]="{'active': seletor == projeto.id}">Projeto {{projeto.title}}</li>
-
-    </ul>
-
-    <ng-container *ngFor="let projeto of projetos">
-
-      <div *ngIf="seletor == projeto.id" class="home-projetos-item">
-
-        <img src="{{projeto.img}}" alt="home-project" />
-
-        <div class="home-projetos-item-text">
-
-          <p>{{projeto.resume}}</p>
-
-          <ul>
-            <li *ngFor="let opcoes of projeto.opcoes">{{opcoes.title}}</li>
-          </ul>
-
-          <span>...E muito mais!</span>
-
-        </div>
-
-      </div>
-
-    </ng-container>
+    </div>
 
     <a routerLink="/projetos/{{slug}}/{{seletor}}"><button>SAIBA MAIS</button></a>
     <a [routerLink] = "[href]"  fragment="contato-form"><button>FAZER ORÇAMENTO</button></a>

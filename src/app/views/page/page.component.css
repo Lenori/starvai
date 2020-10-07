@@ -3,3 +3,12 @@
   padding: 60px 0;
 
 }
+
+::ng-deep p {
+    text-align: justify;
+}
+
+::ng-deep .wp-block-image {
+  display: flex;
+  justify-content: center;
+}
