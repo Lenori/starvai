@@ -24,7 +24,7 @@ export class CategoriaComponent implements OnInit {
     this.buscarTodasCategorias();
   }
 
-  private buscarNovaCategoria(id?: number) {
+  buscarNovaCategoria(id?: number) {
     this.id = id || this.route.snapshot.params.id;
 
     this.categoriasService.single(this.id).then(
